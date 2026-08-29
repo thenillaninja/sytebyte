@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pindrop — Local Site Generator</title>
+
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+  <header class="app-header">
+    <div class="brand">
+      <div class="brand-mark">P</div>
+
+      <div>
+        <h1>Pindrop</h1>
+        <p>Local business site generator</p>
+      </div>
+    </div>
+
+    <div class="status">
+      <span class="status-dot"></span>
+      Local Mode
+    </div>
+  </header>
+
+
+  <main class="app-shell">
+
+    <!-- BUILDER -->
+    <section class="builder-panel">
+
+      <div class="panel-heading">
+        <p class="eyebrow">Business Profile</p>
+        <h2>Build the business.</h2>
+        <p>
+          Enter what you know. Pindrop will turn it into a polished
+          local business website.
+        </p>
+      </div>
+
+
+      <form id="business-form">
+
+        <div class="field">
+          <label for="business-name">Business Name</label>
+          <input
+            id="business-name"
+            type="text"
+            placeholder="Joe's Plumbing"
+          >
+        </div>
+
+
+        <div class="field">
+          <label for="business-type">Business Type</label>
+
+          <select id="business-type">
+            <option value="Local Service">Local Service</option>
+            <option value="Contractor">Contractor</option>
+            <option value="Landscaping">Landscaping</option>
+            <option value="Cleaning Service">Cleaning Service</option>
+            <option value="Automotive">Automotive</option>
+            <option value="Professional Service">Professional Service</option>
+          </select>
+        </div>
+
+
+        <div class="field">
+          <label for="tagline">Tagline</label>
+          <input
+            id="tagline"
+            type="text"
+            placeholder="Fast. Reliable. Done right."
+          >
+        </div>
+
+
+        <div class="field">
+          <label for="description">About the Business</label>
+
+          <textarea
+            id="description"
+            rows="5"
+            placeholder="Family-owned plumbing company serving the Fort Myers area..."
+          ></textarea>
+        </div>
+
+
+        <div class="field-row">
+
+          <div class="field">
+            <label for="phone">Phone</label>
+            <input
+              id="phone"
+              type="tel"
+              placeholder="(239) 555-0123"
+            >
+          </div>
+
+          <div class="field">
+            <label for="email">Email</label>
+            <input
+              id="email"
+              type="email"
+              placeholder="hello@business.com"
+            >
+          </div>
+
+        </div>
+
+
+        <div class="field">
+          <label for="address">Address / Service Area</label>
+
+          <input
+            id="address"
+            type="text"
+            placeholder="Fort Myers, Florida"
+          >
+        </div>
+
+
+        <div class="field">
+          <label for="services">Services</label>
+
+          <textarea
+            id="services"
+            rows="6"
+            placeholder="Drain Cleaning&#10;Water Heater Repair&#10;Leak Detection&#10;Emergency Plumbing"
+          ></textarea>
+
+          <span class="field-hint">
+            Enter one service per line.
+          </span>
+        </div>
+
+
+        <div class="field">
+          <label for="hours">Business Hours</label>
+
+          <textarea
+            id="hours"
+            rows="4"
+            placeholder="Mon-Fri: 8:00 AM - 6:00 PM&#10;Sat: 9:00 AM - 2:00 PM&#10;Sun: Closed"
+          ></textarea>
+        </div>
+
+
+        <div class="field">
+          <label for="brand-color">Brand Color</label>
+
+          <div class="color-field">
+            <input
+              id="brand-color"
+              type="color"
+              value="#2563eb"
+            >
+
+            <span id="color-value">#2563eb</span>
+          </div>
+        </div>
+
+
+        <button
+          class="generate-button"
+          type="submit"
+        >
+          Generate Site
+        </button>
+
+      </form>
+
+    </section>
+
+
+
+    <!-- PREVIEW -->
+    <section class="preview-panel">
+
+      <div class="preview-toolbar">
+
+        <div>
+          <p class="eyebrow">Live Preview</p>
+          <strong id="preview-title">Untitled Business</strong>
+        </div>
+
+        <div class="preview-actions">
+
+          <button
+            class="toolbar-button active"
+            data-preview="desktop"
+            type="button"
+          >
+            Desktop
+          </button>
+
+          <button
+            class="toolbar-button"
+            data-preview="mobile"
+            type="button"
+          >
+            Mobile
+          </button>
+
+        </div>
+
+      </div>
+
+
+      <div class="preview-stage">
+
+        <div
+          id="site-preview"
+          class="site-preview"
+        >
+
+          <div class="empty-state">
+
+            <div class="empty-icon">⌖</div>
+
+            <h3>Your generated site appears here.</h3>
+
+            <p>
+              Add the business information and hit Generate Site.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <script src="js/app.js"></script>
+
+</body>
+</html>
