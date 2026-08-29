@@ -150,17 +150,105 @@
 
 
         <div class="field">
-          <label for="brand-color">Brand Color</label>
+          <label>Brand Palette</label>
 
-          <div class="color-field">
-            <input
-              id="brand-color"
-              type="color"
-              value="#2563eb"
-            >
+          <div class="palette-presets">
+            <button type="button" class="palette-preset" data-palette="professional">
+              Professional
+            </button>
 
-            <span id="color-value">#2563eb</span>
+            <button type="button" class="palette-preset" data-palette="modern">
+              Modern
+            </button>
+
+            <button type="button" class="palette-preset" data-palette="bold">
+              Bold
+            </button>
+
+            <button type="button" class="palette-preset" data-palette="earthy">
+              Earthy
+            </button>
+
+            <button type="button" class="palette-preset" data-palette="luxury">
+              Luxury
+            </button>
+
+            <button type="button" class="palette-preset" data-palette="dark">
+              Dark
+            </button>
           </div>
+
+          <div class="color-grid">
+
+            <div class="color-option">
+              <span>Primary</span>
+
+              <div class="color-field">
+                <input
+                  id="primary-color"
+                  type="color"
+                  value="#1f4f8f"
+                >
+
+                <span data-color-value="primary-color">
+                  #1f4f8f
+                </span>
+              </div>
+            </div>
+
+            <div class="color-option">
+              <span>Accent</span>
+
+              <div class="color-field">
+                <input
+                  id="accent-color"
+                  type="color"
+                  value="#38bdf8"
+                >
+
+                <span data-color-value="accent-color">
+                  #38bdf8
+                </span>
+              </div>
+            </div>
+
+            <div class="color-option">
+              <span>Buttons</span>
+
+              <div class="color-field">
+                <input
+                  id="button-color"
+                  type="color"
+                  value="#2563eb"
+                >
+
+                <span data-color-value="button-color">
+                  #2563eb
+                </span>
+              </div>
+            </div>
+
+            <div class="color-option">
+              <span>Button Text</span>
+
+              <div class="color-field">
+                <input
+                  id="button-text-color"
+                  type="color"
+                  value="#ffffff"
+                >
+
+                <span data-color-value="button-text-color">
+                  #ffffff
+                </span>
+              </div>
+            </div>
+
+          </div>
+
+          <span class="field-hint">
+            Choose a preset or customize the colors individually.
+          </span>
         </div>
 
 
