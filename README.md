@@ -6,6 +6,9 @@ SyteByte is a local-first static website builder designed to create polished, mu
 
 It turns structured business information into a responsive website that can be previewed, customized, saved as an editable project, and published as deployable static files.
 
+**Try it online:**  
+https://thenillaninja.github.io/sytebyte/demo/
+
 ## What SyteByte Does
 
 SyteByte combines a structured business-data workflow with a visual website builder.
@@ -106,6 +109,12 @@ The core builder currently supports:
 - Project save/import
 - Static website publishing
 - Built-in user guide
+
+## Live Demo
+
+Try SyteByte directly in your browser:
+
+https://thenillaninja.github.io/sytebyte/demo/
 
 ## Project Page
 
