@@ -1,343 +1,1259 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta
-    name="description"
-    content="SyteByte is a local-first static website builder for creating polished small-business websites."
-  >
-  <title>SyteByte — The Websyte App</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SyteByte — Websyte App</title>
 
   <link rel="icon" type="image/png" href="assets/sytebyte-logo.png">
   <link rel="apple-touch-icon" href="assets/sytebyte-logo.png">
 
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
 
-  <header class="site-header">
-    <a class="brand" href="#top" aria-label="SyteByte home">
-      <span class="brand-mark">
-        <img src="assets/sytebyte-logo.png" alt="">
-      </span>
+  <header class="app-header">
+    <div class="brand">
+      <div class="brand-mark">
+        <img
+          src="assets/sytebyte-logo.png"
+          alt="SyteByte"
+        >
+      </div>
 
-      <span>
-        <strong>SyteByte</strong>
-        <small>The Websyte App</small>
-      </span>
-    </a>
+      <div>
+        <h1>SyteByte</h1>
+        <p>Local business site generator</p>
+      </div>
+    </div>
 
-    <nav class="site-nav" aria-label="Primary navigation">
-      <a href="#features">Features</a>
-      <a href="#workflow">Workflow</a>
-      <a href="#stack">Stack</a>
-      <a
-        href="https://github.com/thenillaninja/sytebyte"
-        target="_blank"
-        rel="noopener"
+    <div class="app-header-actions">
+      <button
+        id="open-user-guide"
+        class="user-guide-button"
+        type="button"
       >
-        GitHub
-      </a>
-    </nav>
+        User Guide
+      </button>
+
+      <div class="status">
+        <span class="status-dot"></span>
+        Local Mode
+      </div>
+    </div>
   </header>
 
 
-  <main id="top">
+  <main class="app-shell">
 
-    <section class="hero">
-      <div class="hero-copy">
-        <p class="eyebrow">LOCAL-FIRST WEBSITE BUILDER</p>
+    <!-- BUILDER -->
+    <section class="builder-panel">
 
-        <h1>
-          Build the business.<br>
-          <span>Publish the websyte.</span>
-        </h1>
-
-        <p class="hero-lead">
-          SyteByte turns structured business information into a polished,
-          responsive, multipage website — locally, without a CMS or framework.
+      <div class="panel-heading">
+        <p class="eyebrow">Business Profile</p>
+        <h2>Build the business.</h2>
+        <p>
+          Enter what you know. SyteByte will turn it into a polished
+          local business website.
         </p>
 
-        <div class="hero-actions">
-          <a
-            class="button button-primary"
-            href="demo/"
-          >
-            Try SyteByte Online
-          </a>
-
-          <a
-            class="button button-secondary"
-            href="https://github.com/thenillaninja/sytebyte"
-            target="_blank"
-            rel="noopener"
-          >
-            View on GitHub
-          </a>
-        </div>
-
-        <div class="hero-meta">
-          <span>Vanilla HTML / CSS / JS</span>
-          <span>Local-first</span>
-          <span>Static site export</span>
-        </div>
+        <button
+          id="load-demo"
+          class="demo-button"
+          type="button"
+        >
+          Load Demo Business
+        </button>
       </div>
 
-      <div class="hero-visual">
-        <div class="app-screenshot">
-          <img
-            src="assets/sytebyte-builder.png"
-            alt="SyteByte website builder showing builder controls and a live website preview"
+
+            <form id="business-form">
+
+        <!-- BUSINESS DETAILS -->
+
+        <div class="form-section">
+          <button
+            class="form-section-heading"
+            type="button"
+            data-section-toggle
           >
-        </div>
-      </div>
-    </section>
+            <span>01</span>
+
+            <div>
+              <strong>Business Details</strong>
+              <small>The core information for the site.</small>
+            </div>
+
+            <span class="section-chevron">⌄</span>
+          </button>
+
+          <div class="form-section-body">
+<div class="field">
+            <label for="business-name">Business Name</label>
+            <input
+              id="business-name"
+              type="text"
+            >
           </div>
+
+          <div class="field">
+            <label for="tagline">Tagline</label>
+            <input
+              id="tagline"
+              type="text"
+            >
+          </div>
+
+          <div class="field">
+            <label for="description">About the Business</label>
+
+            <textarea
+              id="description"
+              rows="5"
+            ></textarea>
+          </div>
+
+          <div class="field-row">
+            <div class="field">
+              <label for="phone">Phone</label>
+              <input
+                id="phone"
+                type="tel"
+              >
+            </div>
+
+            <div class="field">
+              <label for="email">Email</label>
+              <input
+                id="email"
+                type="email"
+              >
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="address">Address / Service Area</label>
+            <input
+              id="address"
+              type="text"
+            >
+          </div>
+
+          <div class="field-row">
+
+            <div class="field">
+              <label for="primary-zip">Primary ZIP</label>
+              <input
+                id="primary-zip"
+                type="text"
+                inputmode="numeric"
+                maxlength="10"
+              >
+            </div>
+
+            <div class="field">
+              <label for="service-zips">Additional ZIPs</label>
+              <input
+                id="service-zips"
+                type="text"
+              >
+            </div>
+
+          </div>
+
+          <span class="field-hint">
+            Separate additional ZIP codes with commas.
+          </span>
+          </div>
+
         </div>
-      </div>
-    </section>
 
 
-    <section class="section intro-section">
-      <div class="section-heading">
-        <p class="eyebrow">WHAT IT IS</p>
+        <!-- BRAND & VISUALS -->
 
-        <h2>
-          A website generator that behaves like a builder.
-        </h2>
+        <div class="form-section">
+          <button
+            class="form-section-heading"
+            type="button"
+            data-section-toggle
+          >
+            <span>02</span>
 
-        <p>
-          SyteByte combines structured business data, visual controls,
-          multipage management, and live preview into one local tool.
-          When the site is finished, it publishes clean static files that
-          can be hosted almost anywhere.
-        </p>
-      </div>
-    </section>
+            <div>
+              <strong>Brand & Visuals</strong>
+              <small>Give the generated site its identity.</small>
+            </div>
 
+            <span class="section-chevron">⌄</span>
+          </button>
 
-    <section id="workflow" class="section">
-      <div class="section-heading">
-        <p class="eyebrow">WORKFLOW</p>
-        <h2>From business info to deployable site.</h2>
-      </div>
+          <div class="form-section-body">
 
-      <div class="workflow-grid">
+          <div class="field">
 
-        <article class="workflow-card">
-          <span>01</span>
-          <h3>Build</h3>
-          <p>
-            Enter business details, services, hours, testimonials,
-            FAQs, service areas, and other core information.
-          </p>
-        </article>
+            <label>Site Template</label>
 
-        <article class="workflow-card">
-          <span>02</span>
-          <h3>Customize</h3>
-          <p>
-            Choose templates, colors, layouts, textures, imagery,
-            motion, sections, and multipage structure.
-          </p>
-        </article>
+            <div class="template-grid">
 
-        <article class="workflow-card">
-          <span>03</span>
-          <h3>Preview</h3>
-          <p>
-            Watch the generated website update while you work and
-            navigate between pages inside the builder.
-          </p>
-        </article>
+              <button
+                type="button"
+                class="template-choice active"
+                data-site-template="local-service"
+              >
+                <strong>Local Service</strong>
+                <span>Home & field services</span>
+              </button>
 
-        <article class="workflow-card">
-          <span>04</span>
-          <h3>Publish</h3>
-          <p>
-            Export the finished website as a ZIP containing static,
-            deployable HTML pages.
-          </p>
-        </article>
+              <button
+                type="button"
+                class="template-choice"
+                data-site-template="restaurant"
+              >
+                <strong>Restaurant</strong>
+                <span>Food, reviews & reservations</span>
+              </button>
 
-      </div>
-    </section>
+              <button
+                type="button"
+                class="template-choice"
+                data-site-template="professional"
+              >
+                <strong>Professional</strong>
+                <span>Consultants & offices</span>
+              </button>
 
+              <button
+                type="button"
+                class="template-choice"
+                data-site-template="retail"
+              >
+                <strong>Retail</strong>
+                <span>Products & storefronts</span>
+              </button>
 
-    <section id="features" class="section feature-section">
-      <div class="section-heading">
-        <p class="eyebrow">FEATURES</p>
-        <h2>Built around practical website creation.</h2>
-      </div>
+              <button
+                type="button"
+                class="template-choice"
+                data-site-template="automotive"
+              >
+                <strong>Automotive</strong>
+                <span>Repair, detail & service</span>
+              </button>
 
-      <div class="feature-grid">
+              <button
+                type="button"
+                class="template-choice"
+                data-site-template="blank"
+              >
+                <strong>Blank</strong>
+                <span>Start simple</span>
+              </button>
 
-        <article>
-          <span>⌘</span>
-          <h3>Local-first</h3>
-          <p>
-            The builder runs locally in the browser without requiring
-            a hosted CMS.
-          </p>
-        </article>
+            </div>
 
-        <article>
-          <span>▦</span>
-          <h3>Multipage Sites</h3>
-          <p>
-            Create Home, About, Services, Gallery, Contact, Collection,
-            and custom pages.
-          </p>
-        </article>
+            <span class="field-hint">
+              Templates set the starting structure. You can still reorder,
+              hide, add, and customize sections afterward.
+            </span>
 
-        <article>
-          <span>◇</span>
-          <h3>Starter Templates</h3>
-          <p>
-            Start with layouts designed for local service, restaurant,
-            professional, retail, automotive, or blank projects.
-          </p>
-        </article>
-
-        <article>
-          <span>↗</span>
-          <h3>Structured Links</h3>
-          <p>
-            Connect calls to action, products, collections, pages,
-            sections, and external destinations.
-          </p>
-        </article>
-
-        <article>
-          <span>◎</span>
-          <h3>Live Preview</h3>
-          <p>
-            Edit content and design controls while viewing the
-            generated website beside the builder.
-          </p>
-        </article>
-
-        <article>
-          <span>↓</span>
-          <h3>Project Saves</h3>
-          <p>
-            Save editable projects as SyteByte project files and
-            import them again later.
-          </p>
-        </article>
-
-        <article>
-          <span>ZIP</span>
-          <h3>Static Publishing</h3>
-          <p>
-            Publish the completed multipage website into a portable ZIP.
-          </p>
-        </article>
-
-        <article>
-          <span>?</span>
-          <h3>Built-in User Guide</h3>
-          <p>
-            The application includes its own reference guide and
-            recommended workflow.
-          </p>
-        </article>
-
-      </div>
-    </section>
+          </div>
 
 
-    <section id="stack" class="section stack-section">
-      <div class="stack-copy">
-        <p class="eyebrow">UNDER THE HOOD</p>
+<div class="field">
+            <label>Business Logo</label>
 
-        <h2>
-          No framework required.
-        </h2>
+            <label class="upload-box" for="business-logo">
+              <span class="upload-icon">+</span>
 
-        <p>
-          SyteByte is intentionally built with plain web technologies.
-          The project focuses on application architecture, state,
-          generation logic, and user experience without hiding behind
-          a large framework.
-        </p>
-      </div>
+              <span>
+                <strong>Upload logo</strong>
+                <small>PNG, JPG or WebP</small>
+              </span>
+            </label>
 
-      <div class="stack-list">
-        <span>HTML5</span>
-        <span>CSS3</span>
-        <span>Vanilla JavaScript</span>
-        <span>Blob APIs</span>
-        <span>Client-side ZIP generation</span>
-        <span>Static publishing</span>
-      </div>
-    </section>
+            <input
+              id="business-logo"
+              class="file-input"
+              type="file"
+              accept="image/png,image/jpeg,image/webp"
+            >
 
+            <div
+              id="logo-preview"
+              class="asset-preview"
+              hidden
+            ></div>
 
-    <section class="section why-section">
-      <div>
-        <p class="eyebrow">WHY I BUILT IT</p>
+              <span class="regenerate-note">
+                Image changes require Generate Site to refresh the preview.
+              </span>
 
-        <h2>
-          Build the tool first. Automate the rest later.
-        </h2>
-
-        <p>
-          SyteByte started as a way to rapidly create polished MVP websites
-          for local businesses using information gathered manually.
-          The goal was to prove the website-generation workflow before
-          introducing external data APIs or unnecessary infrastructure.
-        </p>
-
-        <p>
-          The result became a reusable local application capable of building,
-          saving, previewing, and publishing complete small-business websites.
-        </p>
-      </div>
-    </section>
+          </div>
 
 
-    <section class="cta-section">
-      <p class="eyebrow">ACTIVE DEVELOPMENT</p>
+          <div class="field">
+            <label>Hero Image</label>
 
-      <h2>SyteByte is still growing.</h2>
+            <label class="upload-box" for="hero-image">
+              <span class="upload-icon">+</span>
 
-      <p>
-        The core builder, multipage architecture, project system,
-        structured links, live preview, and static publishing workflow
-        are operational.
-      </p>
+              <span>
+                <strong>Upload business photo</strong>
+                <small>Used as the main website image</small>
+              </span>
+            </label>
 
-      <div class="hero-actions">
-        <a
-          class="button button-primary"
-          href="demo/"
+            <input
+              id="hero-image"
+              class="file-input"
+              type="file"
+              accept="image/png,image/jpeg,image/webp"
+            >
+
+            <div
+              id="hero-image-preview"
+              class="asset-preview asset-preview-wide"
+              hidden
+            ></div>
+
+              <span class="regenerate-note">
+                Image changes require Generate Site to refresh the preview.
+              </span>
+
+          </div>
+
+
+          <div class="field">
+            <label>Hero Style</label>
+
+            <div class="hero-style-grid">
+
+              <button
+                class="hero-style active"
+                type="button"
+                data-hero-style="split"
+              >
+                <strong>Split</strong>
+                <span>Copy + image</span>
+              </button>
+
+              <button
+                class="hero-style"
+                type="button"
+                data-hero-style="background"
+              >
+                <strong>Cover</strong>
+                <span>Glass + image</span>
+              </button>
+
+              <button
+                class="hero-style"
+                type="button"
+                data-hero-style="minimal"
+              >
+                <strong>Minimal</strong>
+                <span>Clean typography</span>
+              </button>
+
+            </div>
+          </div>
+
+
+          <div class="field">
+            <label>Motion</label>
+
+            <div class="motion-stack">
+
+              <label class="motion-toggle">
+                <input
+                  id="enable-parallax"
+                  type="checkbox"
+                  checked
+                >
+
+                <span>
+                  <strong>Parallax backgrounds</strong>
+                  <small>
+                    Adds subtle depth to hero and image-backed sections.
+                  </small>
+                </span>
+              </label>
+
+
+              <label class="motion-toggle">
+                <input
+                  id="enable-reveal"
+                  type="checkbox"
+                  checked
+                >
+
+                <span>
+                  <strong>Reveal sections on scroll</strong>
+                  <small>
+                    Smoothly introduces content as it enters view.
+                  </small>
+                </span>
+              </label>
+
+            </div>
+
+
+            <div class="motion-options">
+
+              <div>
+                <span class="motion-option-label">
+                  Reveal Style
+                </span>
+
+                <div class="motion-choice-group" data-reveal-style>
+
+                  <button
+                    type="button"
+                    class="motion-choice active"
+                    data-reveal-value="fade-up"
+                  >
+                    Fade Up
+                  </button>
+
+                  <button
+                    type="button"
+                    class="motion-choice"
+                    data-reveal-value="fade"
+                  >
+                    Fade
+                  </button>
+
+                  <button
+                    type="button"
+                    class="motion-choice"
+                    data-reveal-value="slide"
+                  >
+                    Slide
+                  </button>
+
+                  <button
+                    type="button"
+                    class="motion-choice"
+                    data-reveal-value="scale"
+                  >
+                    Scale
+                  </button>
+
+                </div>
+              </div>
+
+
+              <div>
+                <span class="motion-option-label">
+                  Speed
+                </span>
+
+                <div class="motion-choice-group" data-reveal-speed>
+
+                  <button
+                    type="button"
+                    class="motion-choice"
+                    data-speed-value="gentle"
+                  >
+                    Gentle
+                  </button>
+
+                  <button
+                    type="button"
+                    class="motion-choice active"
+                    data-speed-value="normal"
+                  >
+                    Normal
+                  </button>
+
+                  <button
+                    type="button"
+                    class="motion-choice"
+                    data-speed-value="quick"
+                  >
+                    Quick
+                  </button>
+
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <div class="field">
+            <label>Texture & Surface</label>
+
+            <span class="field-hint texture-intro">
+              Add subtle texture to different parts of the generated site.
+            </span>
+
+            <div class="texture-control">
+
+              <span class="texture-label">
+                Page
+              </span>
+
+              <div
+                class="texture-options"
+                data-texture-group="page"
+              >
+
+                <button
+                  type="button"
+                  class="texture-option active"
+                  data-texture="none"
+                >
+                  None
+                </button>
+
+                <button
+                  type="button"
+                  class="texture-option"
+                  data-texture="grain"
+                >
+                  Grain
+                </button>
+
+                <button
+                  type="button"
+                  class="texture-option"
+                  data-texture="grid"
+                >
+                  Grid
+                </button>
+
+                <button
+                  type="button"
+                  class="texture-option"
+                  data-texture="dots"
+                >
+                  Dots
+                </button>
+
+                <button
+                  type="button"
+                  class="texture-option"
+                  data-texture="paper"
+                >
+                  Paper
+                </button>
+
+                <button
+                  type="button"
+                  class="texture-option"
+                  data-texture="diagonal"
+                >
+                  Lines
+                </button>
+
+              </div>
+
+            </div>
+
+
+            <div class="texture-control">
+
+              <span class="texture-label">
+                Hero
+              </span>
+
+              <div
+                class="texture-options"
+                data-texture-group="hero"
+              >
+
+                <button
+                  type="button"
+                  class="texture-option active"
+                  data-texture="none"
+                >
+                  None
+                </button>
+
+                <button
+                  type="button"
+                  class="texture-option"
+                  data-texture="grain"
+                >
+                  Grain
+                </button>
+
+                <button
+                  type="button"
+                  class="texture-option"
+                  data-texture="grid"
+                >
+                  Grid
+                </button>
+
+                <button
+                  type="button"
+                  class="texture-option"
+                  data-texture="dots"
+                >
+                  Dots
+                </button>
+
+                <button
+                  type="button"
+                  class="texture-option"
+                  data-texture="paper"
+                >
+                  Paper
+                </button>
+
+                <button
+                  type="button"
+                  class="texture-option"
+                  data-texture="diagonal"
+                >
+                  Lines
+                </button>
+
+              </div>
+
+            </div>
+
+
+            <div class="texture-control">
+
+              <span class="texture-label">
+                Cards
+              </span>
+
+              <div
+                class="texture-options"
+                data-texture-group="cards"
+              >
+
+                <button
+                  type="button"
+                  class="texture-option active"
+                  data-texture="none"
+                >
+                  None
+                </button>
+
+                <button
+                  type="button"
+                  class="texture-option"
+                  data-texture="grain"
+                >
+                  Grain
+                </button>
+
+                <button
+                  type="button"
+                  class="texture-option"
+                  data-texture="grid"
+                >
+                  Grid
+                </button>
+
+                <button
+                  type="button"
+                  class="texture-option"
+                  data-texture="dots"
+                >
+                  Dots
+                </button>
+
+                <button
+                  type="button"
+                  class="texture-option"
+                  data-texture="paper"
+                >
+                  Paper
+                </button>
+
+                <button
+                  type="button"
+                  class="texture-option"
+                  data-texture="diagonal"
+                >
+                  Lines
+                </button>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <div class="field">
+            <label>Brand Palette</label>
+
+            <div class="palette-presets">
+
+              <button type="button" class="palette-preset" data-palette="professional">
+                Professional
+              </button>
+
+              <button type="button" class="palette-preset" data-palette="modern">
+                Modern
+              </button>
+
+              <button type="button" class="palette-preset" data-palette="bold">
+                Bold
+              </button>
+
+              <button type="button" class="palette-preset" data-palette="earthy">
+                Earthy
+              </button>
+
+              <button type="button" class="palette-preset" data-palette="luxury">
+                Luxury
+              </button>
+
+              <button type="button" class="palette-preset" data-palette="dark">
+                Dark
+              </button>
+
+            </div>
+
+            <div class="color-grid">
+
+              <div class="color-option">
+                <span>Primary</span>
+
+                <div class="color-field">
+                  <input id="primary-color" type="color" value="#1f4f8f">
+                  <span data-color-value="primary-color">#1f4f8f</span>
+                </div>
+              </div>
+
+              <div class="color-option">
+                <span>Accent</span>
+
+                <div class="color-field">
+                  <input id="accent-color" type="color" value="#38bdf8">
+                  <span data-color-value="accent-color">#38bdf8</span>
+                </div>
+              </div>
+
+              <div class="color-option">
+                <span>Buttons</span>
+
+                <div class="color-field">
+                  <input id="button-color" type="color" value="#2563eb">
+                  <span data-color-value="button-color">#2563eb</span>
+                </div>
+              </div>
+
+              <div class="color-option">
+                <span>Button Text</span>
+
+                <div class="color-field">
+                  <input id="button-text-color" type="color" value="#ffffff">
+                  <span data-color-value="button-text-color">#ffffff</span>
+                </div>
+              </div>
+
+            </div>
+
+            <span class="field-hint">
+              Choose a preset or customize the colors individually.
+            </span>
+          </div>
+          </div>
+
+        </div>
+
+
+        <!-- SERVICES -->
+
+        <div class="form-section">
+          <button
+            class="form-section-heading"
+            type="button"
+            data-section-toggle
+          >
+            <span>03</span>
+
+            <div>
+              <strong>Services & Availability</strong>
+              <small>What the business does and when it's open.</small>
+            </div>
+
+            <span class="section-chevron">⌄</span>
+          </button>
+
+          <div class="form-section-body">
+<div class="field">
+            <label for="services">Services</label>
+
+            <textarea
+              id="services"
+              rows="6"
+            ></textarea>
+
+            <span class="field-hint">
+              One service per line.
+            </span>
+          </div>
+
+          <div class="field">
+            <label for="hours">Business Hours</label>
+
+            <textarea
+              id="hours"
+              rows="4"
+            ></textarea>
+          </div>
+          </div>
+
+        </div>
+
+
+        <!-- SOCIAL PROOF -->
+
+        <div class="form-section">
+          <button
+            class="form-section-heading"
+            type="button"
+            data-section-toggle
+          >
+            <span>04</span>
+
+            <div>
+              <strong>Social Proof & Content</strong>
+              <small>Optional sections that make the site feel complete.</small>
+            </div>
+
+            <span class="section-chevron">⌄</span>
+          </button>
+
+          <div class="form-section-body">
+<div class="field">
+            <label for="testimonials">Testimonials</label>
+
+            <textarea
+              id="testimonials"
+              rows="6"
+            ></textarea>
+
+            <span class="field-hint">
+              Optional. One review per line: Name | Review
+            </span>
+          </div>
+
+
+          <div class="field">
+            <label>Photo Gallery</label>
+
+            <label class="upload-box" for="gallery-images">
+              <span class="upload-icon">+</span>
+
+              <span>
+                <strong>Add gallery photos</strong>
+                <small>Select up to 9 images</small>
+              </span>
+            </label>
+
+            <input
+              id="gallery-images"
+              class="file-input"
+              type="file"
+              accept="image/png,image/jpeg,image/webp"
+              multiple
+            >
+
+            <div
+              id="gallery-preview"
+              class="gallery-upload-preview"
+              hidden
+            ></div>
+
+            <span class="regenerate-note">
+              Image changes require Generate Site to refresh the preview.
+            </span>
+          </div>
+
+
+          <div class="field">
+            <label for="faqs">Frequently Asked Questions</label>
+
+            <textarea
+              id="faqs"
+              rows="7"
+            ></textarea>
+
+            <span class="field-hint">
+              Optional. One FAQ per line: Question | Answer
+            </span>
+          </div>
+          </div>
+
+        </div>
+
+
+        <div class="form-section">
+
+          <button
+            class="form-section-heading"
+            type="button"
+            data-section-toggle
+          >
+            <span>05</span>
+
+            <div>
+              <strong>Page Sections</strong>
+              <small>Reorder, hide, and customize the generated page.</small>
+            </div>
+
+            <span class="section-chevron">⌄</span>
+          </button>
+
+          <div class="form-section-body">
+
+            <div class="page-manager-panel">
+
+              <div class="page-manager-header">
+
+                <div>
+                  <strong>Pages</strong>
+                  <small>Switch, add, and manage site pages.</small>
+                </div>
+
+                <button
+                  type="button"
+                  class="page-add-button"
+                  id="add-page"
+                >
+                  + Add Page
+                </button>
+
+
+                <div
+                  id="page-type-menu"
+                  class="page-type-menu"
+                  hidden
+                >
+
+                  <button type="button" data-page-type="blank">
+                    <strong>Blank</strong>
+                    <span>Start with a clean page</span>
+                  </button>
+
+                  <button type="button" data-page-type="about">
+                    <strong>About</strong>
+                    <span>Story, team & trust</span>
+                  </button>
+
+                  <button type="button" data-page-type="services">
+                    <strong>Services</strong>
+                    <span>Services, process & CTA</span>
+                  </button>
+
+                  <button type="button" data-page-type="collection">
+                    <strong>Collection</strong>
+                    <span>Collections & products</span>
+                  </button>
+
+                  <button type="button" data-page-type="gallery">
+                    <strong>Gallery</strong>
+                    <span>Images & social proof</span>
+                  </button>
+
+                  <button type="button" data-page-type="contact">
+                    <strong>Contact</strong>
+                    <span>Contact details & FAQ</span>
+                  </button>
+
+                </div>
+
+              </div>
+
+              <div
+                id="page-manager"
+                class="page-manager"
+              ></div>
+
+            </div>
+
+
+            <div
+              id="section-manager"
+              class="section-manager"
+            ></div>
+
+
+            <div class="add-section-panel">
+
+              <span class="add-section-label">
+                Add Section
+              </span>
+
+              <div class="add-section-grid">
+
+                <button
+                  type="button"
+                  class="add-section-button"
+                  data-add-section="text-image"
+                >
+                  <strong>Text + Image</strong>
+                  <span>Story, intro, or feature</span>
+                </button>
+
+                <button
+                  type="button"
+                  class="add-section-button"
+                  data-add-section="features"
+                >
+                  <strong>Feature Cards</strong>
+                  <span>Highlight benefits</span>
+                </button>
+
+                <button
+                  type="button"
+                  class="add-section-button"
+                  data-add-section="promo"
+                >
+                  <strong>Promo CTA</strong>
+                  <span>Offer or promotion</span>
+                </button>
+
+                <button
+                  type="button"
+                  class="add-section-button"
+                  data-add-section="trust"
+                >
+                  <strong>Trust Strip</strong>
+                  <span>Badges or credentials</span>
+                </button>
+
+                <button
+                  type="button"
+                  class="add-section-button"
+                  data-add-section="menu"
+                  data-template-only="restaurant"
+                  hidden
+                >
+                  <strong>Menu</strong>
+                  <span>Categories, dishes & prices</span>
+                </button>
+
+                <button
+                  type="button"
+                  class="add-section-button"
+                  data-add-section="featured-dish"
+                  data-template-only="restaurant"
+                  hidden
+                >
+                  <strong>Featured Dish</strong>
+                  <span>Spotlight a signature item</span>
+                </button>
+
+                <button
+                  type="button"
+                  class="add-section-button"
+                  data-add-section="reservation"
+                  data-template-only="restaurant"
+                  hidden
+                >
+                  <strong>Reservation CTA</strong>
+                  <span>Drive bookings or calls</span>
+                </button>
+
+                <button
+                  type="button"
+                  class="add-section-button"
+                  data-add-section="credentials"
+                  data-template-only="professional"
+                  hidden
+                >
+                  <strong>Credentials</strong>
+                  <span>Licenses, certifications & trust</span>
+                </button>
+
+                <button
+                  type="button"
+                  class="add-section-button"
+                  data-add-section="process"
+                  data-template-only="professional"
+                  hidden
+                >
+                  <strong>Process</strong>
+                  <span>Explain how you work</span>
+                </button>
+
+                <button
+                  type="button"
+                  class="add-section-button"
+                  data-add-section="team"
+                  data-template-only="professional"
+                  hidden
+                >
+                  <strong>Team</strong>
+                  <span>People, roles & expertise</span>
+                </button>
+
+                <button
+                  type="button"
+                  class="add-section-button"
+                  data-add-section="products"
+                  data-template-only="retail"
+                  hidden
+                >
+                  <strong>Featured Products</strong>
+                  <span>Products, prices & links</span>
+                </button>
+
+                <button
+                  type="button"
+                  class="add-section-button"
+                  data-add-section="collections"
+                  data-template-only="retail"
+                  hidden
+                >
+                  <strong>Collections</strong>
+                  <span>Organize product categories</span>
+                </button>
+
+                <button
+                  type="button"
+                  class="add-section-button"
+                  data-add-section="store-promo"
+                  data-template-only="retail"
+                  hidden
+                >
+                  <strong>Store Promo</strong>
+                  <span>Sales, launches & offers</span>
+                </button>
+
+
+
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <button
+          class="generate-button"
+          type="submit"
         >
-          Try SyteByte Online
-        </a>
+          Generate Site
+        </button>
 
-        <a
-          class="button button-secondary"
-          href="https://github.com/thenillaninja/sytebyte"
-          target="_blank"
-          rel="noopener"
-        >
-          Explore the Repository
-        </a>
+      </form>
+
+    </section>
+
+
+
+    <!-- PREVIEW -->
+    <section class="preview-panel">
+
+      <div class="preview-toolbar">
+
+        <div>
+          <p class="eyebrow">Live Preview</p>
+          <strong id="preview-title">Untitled Business</strong>
+        </div>
+
+        <div class="preview-actions">
+
+          <button
+            class="toolbar-button active"
+            data-preview="desktop"
+            type="button"
+          >
+            Desktop
+          </button>
+
+          <button
+            class="toolbar-button"
+            data-preview="mobile"
+            type="button"
+          >
+            Mobile
+          </button>
+
+          <button
+            class="toolbar-button"
+            id="fullscreen-site"
+            type="button"
+            disabled
+          >
+            Fullscreen
+          </button>
+
+          <button
+            class="toolbar-button"
+            id="import-project"
+            type="button"
+          >
+            Import Project
+          </button>
+
+          <button
+            class="toolbar-button"
+            id="export-project"
+            type="button"
+          >
+            Export Project
+          </button>
+
+          <input
+            id="import-project-file"
+            type="file"
+            accept=".json,.sytebyte.json,application/json"
+            hidden
+          >
+
+          <button
+            class="toolbar-button export-button"
+            id="export-site"
+            type="button"
+            disabled
+          >
+            Export Website
+          </button>
+
+        </div>
+
       </div>
+
+
+      <div class="preview-stage">
+
+        <div
+          id="site-preview"
+          class="site-preview"
+        >
+
+          <div class="empty-state">
+
+            <div class="empty-icon">⌖</div>
+
+            <h3>Your generated site appears here.</h3>
+
+            <p>
+              Add the business information and hit Generate Site.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
     </section>
 
   </main>
 
 
-  <footer class="site-footer">
-    <div>
-      <strong>SyteByte</strong>
-      <span>The Websyte App.</span>
-    </div>
-
+  
+  <footer class="app-footer">
     <p>
       © 2026
       <a
@@ -349,6 +1265,255 @@
       </a>
     </p>
   </footer>
+
+  
+  <div
+    id="user-guide-modal"
+    class="user-guide-modal"
+    hidden
+  >
+    <div
+      class="user-guide-backdrop"
+      data-close-user-guide
+    ></div>
+
+    <section
+      class="user-guide-dialog"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="user-guide-title"
+    >
+      <header class="user-guide-header">
+        <div>
+          <p class="eyebrow">SyteByte Help</p>
+          <h2 id="user-guide-title">User Guide</h2>
+          <p>
+            Build, customize, save, and publish a complete business website.
+          </p>
+        </div>
+
+        <button
+          class="user-guide-close"
+          type="button"
+          data-close-user-guide
+          aria-label="Close user guide"
+        >
+          ×
+        </button>
+      </header>
+
+      <div class="user-guide-content">
+
+        <nav class="user-guide-nav" aria-label="User guide sections">
+          <a href="#guide-start">Getting Started</a>
+          <a href="#guide-business">Business Details</a>
+          <a href="#guide-brand">Brand & Visuals</a>
+          <a href="#guide-services">Services</a>
+          <a href="#guide-content">Social Proof</a>
+          <a href="#guide-pages">Pages & Sections</a>
+          <a href="#guide-links">Links</a>
+          <a href="#guide-projects">Projects</a>
+          <a href="#guide-publish">Publishing</a>
+          <a href="#guide-workflow">Workflow</a>
+          <a href="#guide-troubleshooting">Troubleshooting</a>
+        </nav>
+
+        <div class="user-guide-body">
+
+          <section id="guide-start" class="guide-section">
+            <span class="guide-number">01</span>
+            <div>
+              <h3>Getting Started</h3>
+              <p>
+                SyteByte turns structured business information into a polished,
+                responsive website. Start with the business information, choose
+                the visual style, configure content and pages, then generate the
+                site.
+              </p>
+              <p>
+                Use <strong>Load Demo Business</strong> if you want to explore
+                SyteByte with sample content before starting a real project.
+              </p>
+            </div>
+          </section>
+
+          <section id="guide-business" class="guide-section">
+            <span class="guide-number">02</span>
+            <div>
+              <h3>Business Details</h3>
+              <p>
+                Enter the core information that identifies the business:
+                business name, tagline, description, phone number, email,
+                location, ZIP code, and service areas.
+              </p>
+              <p>
+                This information is reused throughout the generated website,
+                including the hero, contact areas, calls to action, and footer.
+              </p>
+            </div>
+          </section>
+
+          <section id="guide-brand" class="guide-section">
+            <span class="guide-number">03</span>
+            <div>
+              <h3>Brand & Visuals</h3>
+              <p>
+                Choose the site template, hero layout, colors, textures, motion,
+                and imagery. You can upload a business logo, hero image, and
+                gallery images.
+              </p>
+              <p>
+                Templates provide a starting structure. They do not prevent you
+                from changing, reordering, adding, or removing sections later.
+              </p>
+            </div>
+          </section>
+
+          <section id="guide-services" class="guide-section">
+            <span class="guide-number">04</span>
+            <div>
+              <h3>Services & Availability</h3>
+              <p>
+                Add the services the business provides and its operating hours.
+                Enter one service per line so SyteByte can turn them into
+                individual service items in the generated site.
+              </p>
+            </div>
+          </section>
+
+          <section id="guide-content" class="guide-section">
+            <span class="guide-number">05</span>
+            <div>
+              <h3>Social Proof & Content</h3>
+              <p>
+                Add optional testimonials, FAQs, gallery content, and other
+                supporting information. These sections help make a generated
+                site feel complete without requiring every field to be filled.
+              </p>
+            </div>
+          </section>
+
+          <section id="guide-pages" class="guide-section">
+            <span class="guide-number">06</span>
+            <div>
+              <h3>Pages & Sections</h3>
+              <p>
+                The Page Manager controls the pages in the website. Home is
+                always the main <strong>index.html</strong> page. Additional
+                pages can be created from starter templates such as About,
+                Services, Gallery, Collection, Contact, or Blank.
+              </p>
+              <p>
+                Inside each page, sections can be enabled, disabled, reordered,
+                renamed for navigation, and customized independently.
+              </p>
+            </div>
+          </section>
+
+          <section id="guide-links" class="guide-section">
+            <span class="guide-number">07</span>
+            <div>
+              <h3>Linking Buttons & Content</h3>
+              <p>
+                Structured links allow buttons, products, collections, and
+                promotional sections to link to another page, a section within
+                the website, or an external URL.
+              </p>
+              <p>
+                Use Page or Section links whenever possible so SyteByte can
+                automatically generate the correct destination in the published
+                website.
+              </p>
+            </div>
+          </section>
+
+          <section id="guide-projects" class="guide-section">
+            <span class="guide-number">08</span>
+            <div>
+              <h3>Saving & Importing Projects</h3>
+              <p>
+                <strong>Save Project</strong> stores the editable SyteByte
+                project as a <strong>.sytebyte.json</strong> file. This contains
+                the project structure, pages, content, design choices, and
+                supported uploaded imagery.
+              </p>
+              <p>
+                Use <strong>Import Project</strong> to reopen that file later
+                and continue editing where you left off.
+              </p>
+            </div>
+          </section>
+
+          <section id="guide-publish" class="guide-section">
+            <span class="guide-number">09</span>
+            <div>
+              <h3>Publishing the Website</h3>
+              <p>
+                Use <strong>Publish Files</strong> when the site is ready.
+                SyteByte creates a ZIP containing the generated website pages.
+              </p>
+              <p>
+                The Home page is exported as <strong>index.html</strong>.
+                Additional pages are exported using their page slugs. The files
+                can then be uploaded to a static web host or web server.
+              </p>
+            </div>
+          </section>
+
+          <section id="guide-workflow" class="guide-section">
+            <span class="guide-number">10</span>
+            <div>
+              <h3>Recommended Workflow</h3>
+              <ol>
+                <li>Enter Business Details.</li>
+                <li>Choose a template and visual style.</li>
+                <li>Add services, hours, and supporting content.</li>
+                <li>Generate the site.</li>
+                <li>Adjust pages and sections while watching the live preview.</li>
+                <li>Configure buttons and links.</li>
+                <li>Save the editable project.</li>
+                <li>Publish the final website files.</li>
+              </ol>
+            </div>
+          </section>
+
+          <section id="guide-troubleshooting" class="guide-section">
+            <span class="guide-number">11</span>
+            <div>
+              <h3>Quick Troubleshooting</h3>
+
+              <h4>My changes are not showing.</h4>
+              <p>
+                Generate the site once to activate the live preview. Most text
+                and settings will then update automatically as you edit.
+              </p>
+
+              <h4>I changed an uploaded image.</h4>
+              <p>
+                Image changes may require pressing <strong>Generate Site</strong>
+                again before they appear.
+              </p>
+
+              <h4>I want to continue editing later.</h4>
+              <p>
+                Save the project before closing SyteByte, then import the
+                resulting <strong>.sytebyte.json</strong> file next time.
+              </p>
+
+              <h4>I only want the finished website.</h4>
+              <p>
+                Use <strong>Publish Files</strong>. The published ZIP is separate
+                from the editable SyteByte project file.
+              </p>
+            </div>
+          </section>
+
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script src="js/app.js"></script>
 
 </body>
 </html>
