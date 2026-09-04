@@ -1,0 +1,422 @@
+/* =========================================================
+   SYTEBYTE CONSULT — REPORT PRINT
+   Clean client-facing PDF output
+   ========================================================= */
+
+@page {
+  size: letter;
+  margin: 0.62in 0.68in 0.65in;
+}
+
+@media print {
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  html,
+  body {
+    width: 100%;
+    margin: 0 !important;
+    padding: 0 !important;
+
+    background: #ffffff !important;
+    color: #172033 !important;
+
+    font-family: "Inter", Arial, sans-serif;
+  }
+
+  /* -------------------------------------------------------
+     REMOVE APP UI
+     ------------------------------------------------------- */
+
+  .sidebar,
+  .topbar,
+  .workflow-card,
+  .side-stack,
+  .present-toolbar,
+  .no-print {
+    display: none !important;
+  }
+
+  .app-shell,
+  .main-content,
+  .workspace-grid,
+  .business-panel,
+  #stageContent,
+  .present-sheet {
+    display: block !important;
+
+    width: 100% !important;
+    max-width: none !important;
+    min-width: 0 !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    border: 0 !important;
+    border-radius: 0 !important;
+
+    background: transparent !important;
+    box-shadow: none !important;
+  }
+
+  /* -------------------------------------------------------
+     REPORT HEADER
+     ------------------------------------------------------- */
+
+  .present-header {
+    display: flex !important;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 28px;
+
+    margin: 0 0 28px !important;
+    padding: 0 0 20px !important;
+
+    border: 0 !important;
+    border-bottom: 1px solid #d9dee7 !important;
+    border-radius: 0 !important;
+
+    background: transparent !important;
+    box-shadow: none !important;
+  }
+
+  .present-kicker {
+    margin: 0 0 6px !important;
+
+    color: #2563eb !important;
+
+    font-size: 9px !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.14em !important;
+  }
+
+  .present-header h2 {
+    margin: 0 !important;
+
+    color: #111827 !important;
+
+    font-size: 25px !important;
+    line-height: 1.1 !important;
+  }
+
+  .present-subtitle {
+    margin: 6px 0 0 !important;
+
+    color: #667085 !important;
+
+    font-size: 10px !important;
+  }
+
+  .present-business-meta {
+    color: #667085 !important;
+
+    font-size: 9px !important;
+    line-height: 1.5 !important;
+  }
+
+  /* -------------------------------------------------------
+     REPORT SECTIONS
+     NO CARDS / NO CONTAINERS
+     ------------------------------------------------------- */
+
+  .present-section {
+    margin: 0 0 26px !important;
+    padding: 0 !important;
+
+    border: 0 !important;
+    border-radius: 0 !important;
+
+    background: transparent !important;
+    box-shadow: none !important;
+
+    break-inside: auto;
+  }
+
+  .present-section-heading {
+    display: flex !important;
+    align-items: flex-start !important;
+    gap: 8px !important;
+
+    margin: 0 0 12px !important;
+    padding: 0 0 7px !important;
+
+    border-bottom: 1px solid #e5e9ef !important;
+  }
+
+  .present-section-heading > span {
+    color: #2563eb !important;
+
+    font-size: 9px !important;
+    font-weight: 700 !important;
+  }
+
+  .panel-label {
+    margin: 0 0 2px !important;
+
+    color: #2563eb !important;
+
+    font-size: 8px !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.12em !important;
+  }
+
+  .present-section-heading h3 {
+    margin: 0 !important;
+
+    color: #172033 !important;
+
+    font-size: 14px !important;
+    line-height: 1.2 !important;
+  }
+
+  .present-copy-block {
+    margin: 0 !important;
+    padding: 0 !important;
+
+    color: #344054 !important;
+
+    font-size: 10.5px !important;
+    line-height: 1.6 !important;
+  }
+
+  /* -------------------------------------------------------
+     CURRENT STATE
+     ------------------------------------------------------- */
+
+  .present-snapshot-list {
+    display: block !important;
+  }
+
+  .present-snapshot-item {
+    display: flex !important;
+    align-items: flex-start !important;
+    justify-content: space-between !important;
+    gap: 20px !important;
+
+    margin: 0 !important;
+    padding: 8px 0 !important;
+
+    border: 0 !important;
+    border-bottom: 1px solid #edf0f4 !important;
+    border-radius: 0 !important;
+
+    background: transparent !important;
+    box-shadow: none !important;
+
+    break-inside: avoid;
+  }
+
+  .present-snapshot-item:last-child {
+    border-bottom: 0 !important;
+  }
+
+  .present-snapshot-item strong {
+    margin: 0 0 2px !important;
+
+    color: #172033 !important;
+
+    font-size: 10px !important;
+  }
+
+  .present-snapshot-item div > span {
+    color: #667085 !important;
+
+    font-size: 9px !important;
+    line-height: 1.45 !important;
+  }
+
+  .present-status {
+    color: #2563eb !important;
+
+    font-size: 8.5px !important;
+    font-weight: 700 !important;
+
+    white-space: nowrap;
+  }
+
+  /* -------------------------------------------------------
+     KEY FINDINGS
+     ------------------------------------------------------- */
+
+  .present-findings-list {
+    display: block !important;
+  }
+
+  .present-finding {
+    display: grid !important;
+    grid-template-columns: 24px minmax(0, 1fr) !important;
+    gap: 0 !important;
+
+    margin: 0 !important;
+    padding: 9px 0 !important;
+
+    border: 0 !important;
+    border-bottom: 1px solid #edf0f4 !important;
+    border-radius: 0 !important;
+
+    background: transparent !important;
+    box-shadow: none !important;
+
+    break-inside: avoid;
+  }
+
+  .present-finding:last-child {
+    border-bottom: 0 !important;
+  }
+
+  .present-index {
+    color: #2563eb !important;
+
+    font-size: 8.5px !important;
+    font-weight: 700 !important;
+  }
+
+  .present-finding-copy strong {
+    margin: 0 0 2px !important;
+
+    color: #172033 !important;
+
+    font-size: 10px !important;
+  }
+
+  .present-finding-copy span {
+    color: #667085 !important;
+
+    font-size: 9px !important;
+    line-height: 1.45 !important;
+  }
+
+  /* -------------------------------------------------------
+     ACTION PLAN
+     ------------------------------------------------------- */
+
+  .present-priority-list {
+    display: block !important;
+  }
+
+  .present-priority-card {
+    margin: 0 !important;
+    padding: 12px 0 !important;
+
+    border: 0 !important;
+    border-bottom: 1px solid #dfe4eb !important;
+    border-radius: 0 !important;
+
+    background: transparent !important;
+    box-shadow: none !important;
+
+    break-inside: avoid;
+  }
+
+  .present-priority-card:last-child {
+    border-bottom: 0 !important;
+  }
+
+  .present-priority-top {
+    display: grid !important;
+    grid-template-columns: 24px minmax(0, 1fr) auto !important;
+    gap: 0 !important;
+
+    margin: 0 0 9px !important;
+  }
+
+  .present-priority-top strong {
+    color: #172033 !important;
+
+    font-size: 10.5px !important;
+  }
+
+  .priority-badge {
+    padding: 0 !important;
+
+    border: 0 !important;
+    border-radius: 0 !important;
+
+    background: transparent !important;
+    color: #2563eb !important;
+
+    font-size: 8.5px !important;
+    font-weight: 700 !important;
+  }
+
+  .present-priority-grid {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 26px !important;
+
+    margin: 0 0 0 24px !important;
+  }
+
+  .present-label {
+    margin: 0 0 3px !important;
+
+    color: #8a94a3 !important;
+
+    font-size: 7.5px !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.08em !important;
+  }
+
+  .present-priority-grid p {
+    margin: 0 !important;
+
+    color: #475467 !important;
+
+    font-size: 9px !important;
+    line-height: 1.5 !important;
+  }
+
+  .present-meta {
+    display: flex !important;
+    gap: 18px !important;
+
+    margin: 9px 0 0 24px !important;
+    padding: 7px 0 0 !important;
+
+    border: 0 !important;
+
+    color: #7a8494 !important;
+
+    font-size: 8px !important;
+  }
+
+  .present-meta strong {
+    color: #344054 !important;
+  }
+
+  /* -------------------------------------------------------
+     EMPTY STATES
+     ------------------------------------------------------- */
+
+  .empty-state {
+    display: block !important;
+
+    margin: 0 !important;
+    padding: 8px 0 !important;
+
+    border: 0 !important;
+    border-radius: 0 !important;
+
+    background: transparent !important;
+
+    text-align: left !important;
+  }
+
+  .empty-state strong {
+    color: #172033 !important;
+
+    font-size: 9px !important;
+  }
+
+  .empty-state span {
+    color: #667085 !important;
+
+    font-size: 8.5px !important;
+  }
+}
