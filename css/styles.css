@@ -2635,3 +2635,15 @@ body.user-guide-open {
     min-width: 0;
   }
 }
+
+
+/* SYTEBYTE BUILD PRODUCT MARK */
+.product-mark {
+  margin: 0;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #dfe7ff;
+}
