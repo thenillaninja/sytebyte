@@ -69,9 +69,19 @@
           </button>
         </div>
 
-        <button class="primary-button" id="newConsultationButton">
-          + New Consultation
-        </button>
+        <div class="app-header-actions">
+          <button
+            class="user-guide-button"
+            id="open-user-guide"
+            type="button"
+          >
+            User Guide
+          </button>
+
+          <button class="primary-button" id="newConsultationButton">
+            + New Consultation
+          </button>
+        </div>
       </header>
 
       <section class="workflow-card">
@@ -179,6 +189,418 @@
 
     </main>
   </div>
+
+
+  <div
+    id="user-guide-modal"
+    class="user-guide-modal no-print"
+    hidden
+  >
+    <div
+      class="user-guide-backdrop"
+      data-close-user-guide
+    ></div>
+
+    <section
+      class="user-guide-dialog"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="user-guide-title"
+    >
+      <header class="user-guide-header">
+        <div>
+          <p class="eyebrow">SyteByte Help</p>
+          <h2 id="user-guide-title">Consult User Guide</h2>
+          <p>
+            Review a business, identify opportunities, prioritize action,
+            and create a clear client-ready report.
+          </p>
+        </div>
+
+        <button
+          class="user-guide-close"
+          type="button"
+          data-close-user-guide
+          aria-label="Close user guide"
+        >
+          ×
+        </button>
+      </header>
+
+      <div class="user-guide-content">
+
+        <div class="user-guide-nav-wrap">
+          <button
+            class="user-guide-nav-toggle"
+            id="userGuideNavToggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="userGuideNav"
+          >
+            <span>Guide Sections</span>
+            <span class="user-guide-nav-toggle-icon" aria-hidden="true">⌄</span>
+          </button>
+
+          <nav
+            class="user-guide-nav"
+            id="userGuideNav"
+            aria-label="Consult user guide sections"
+          >
+            <a href="#guide-start">Getting Started</a>
+          <a href="#guide-mode">Choose Your Mode</a>
+          <a href="#guide-intake">Intake</a>
+          <a href="#guide-review">Review</a>
+          <a href="#guide-analyze">Analyze</a>
+          <a href="#guide-prioritize">Prioritize</a>
+          <a href="#guide-present">Present</a>
+          <a href="#guide-consultations">Consultations</a>
+          <a href="#guide-portability">Import & Export</a>
+          <a href="#guide-workflow">Workflow</a>
+            <a href="#guide-troubleshooting">Troubleshooting</a>
+          </nav>
+        </div>
+
+        <div class="user-guide-body">
+
+          <section id="guide-start" class="guide-section">
+            <span class="guide-number">01</span>
+
+            <div>
+              <h3>Getting Started</h3>
+
+              <p>
+                SyteByte Consult helps turn business observations into a
+                practical action plan. The core workflow is
+                <strong>Intake → Review → Analyze → Prioritize → Present</strong>.
+              </p>
+
+              <p>
+                Each consultation is saved locally as you work. You can move
+                backward through completed stages without losing information,
+                and previously reached stages remain available from the
+                workflow bar.
+              </p>
+            </div>
+          </section>
+
+          <section id="guide-mode" class="guide-section">
+            <span class="guide-number">02</span>
+
+            <div>
+              <h3>Choose Your Mode</h3>
+
+              <p>
+                New consultations begin by asking how SyteByte Consult will
+                be used.
+              </p>
+
+              <h4>Business Owner</h4>
+
+              <p>
+                Choose <strong>Review my own business</strong> for a guided
+                experience with simpler prompts and self-assessment language.
+              </p>
+
+              <h4>Consultant</h4>
+
+              <p>
+                Choose <strong>Review a client business</strong> for the
+                professional consultation workspace with faster,
+                consultant-focused wording.
+              </p>
+
+              <p>
+                Both modes use the same underlying workflow and converge into
+                the same Analyze, Prioritize, and Present stages.
+              </p>
+            </div>
+          </section>
+
+          <section id="guide-intake" class="guide-section">
+            <span class="guide-number">03</span>
+
+            <div>
+              <h3>Intake</h3>
+
+              <p>
+                Capture the business name, industry, website, location, and
+                the main goal or reason for the consultation.
+              </p>
+
+              <p>
+                In Business Owner mode, the prompts are framed around what the
+                owner would like to improve. In Consultant mode, the same
+                information is captured as a professional intake.
+              </p>
+            </div>
+          </section>
+
+          <section id="guide-review" class="guide-section">
+            <span class="guide-number">04</span>
+
+            <div>
+              <h3>Review</h3>
+
+              <p>
+                Review the current state of the business across areas such as
+                Website, Google Presence, Lead Capture, Social Presence, and
+                Trust Signals.
+              </p>
+
+              <p>
+                Select the status that best describes each area and add a
+                quick observation when useful. Review is meant to record
+                <strong>what exists today</strong>, not diagnose the problem yet.
+              </p>
+
+              <p>
+                Items marked as needing work or missing are carried forward
+                into Analyze as draft findings.
+              </p>
+            </div>
+          </section>
+
+          <section id="guide-analyze" class="guide-section">
+            <span class="guide-number">05</span>
+
+            <div>
+              <h3>Analyze</h3>
+
+              <p>
+                Analyze turns observations into clear findings and
+                recommendations.
+              </p>
+
+              <p>
+                Each finding can include the original evidence, why the issue
+                matters to the business, and a recommended action.
+              </p>
+
+              <h4>Refine</h4>
+
+              <p>
+                Use <strong>Refine</strong> to improve the wording of a finding
+                title.
+              </p>
+
+              <h4>Draft Impact</h4>
+
+              <p>
+                Use <strong>Draft Impact</strong> to create a starting point for
+                explaining why the finding matters.
+              </p>
+
+              <h4>Draft Action</h4>
+
+              <p>
+                Use <strong>Draft Action</strong> to create a suggested next
+                step. Drafted text remains editable and should be reviewed
+                before presentation.
+              </p>
+
+              <p>
+                You can also use <strong>Add Finding</strong> to capture an
+                opportunity that did not originate in Review.
+              </p>
+            </div>
+          </section>
+
+          <section id="guide-prioritize" class="guide-section">
+            <span class="guide-number">06</span>
+
+            <div>
+              <h3>Prioritize</h3>
+
+              <p>
+                Prioritize helps decide what should be acted on first using
+                two simple measures: <strong>Impact</strong> and
+                <strong>Effort</strong>.
+              </p>
+
+              <p>
+                Higher-impact and lower-effort findings rise toward the top.
+                A high-impact, low-effort item is identified as a
+                <strong>Quick Win</strong>.
+              </p>
+
+              <p>
+                Check <strong>Add to action plan</strong> for the findings that
+                should appear in the final client report.
+              </p>
+            </div>
+          </section>
+
+          <section id="guide-present" class="guide-section">
+            <span class="guide-number">07</span>
+
+            <div>
+              <h3>Present</h3>
+
+              <p>
+                Present creates the client-facing Business Snapshot &
+                Recommended Action Plan from the information already entered
+                during the consultation.
+              </p>
+
+              <p>
+                The report includes the business goal, current-state snapshot,
+                key findings, and selected priorities.
+              </p>
+
+              <p>
+                Use <strong>Print / Save PDF</strong> to create a clean,
+                white-paper-style report. Internal Quick Notes and app
+                navigation are excluded from the printed document.
+              </p>
+            </div>
+          </section>
+
+          <section id="guide-consultations" class="guide-section">
+            <span class="guide-number">08</span>
+
+            <div>
+              <h3>Managing Consultations</h3>
+
+              <p>
+                Open <strong>Consultations</strong> to view saved consultation
+                workspaces.
+              </p>
+
+              <p>
+                Each saved consultation shows its current stage, number of
+                findings, priorities, and last-updated date.
+              </p>
+
+              <p>
+                Available actions include
+                <strong>Open, Duplicate, Export, Rename,</strong> and
+                <strong>Delete</strong>.
+              </p>
+
+              <p>
+                On smaller screens, use the Consultations button below
+                Business Review to open the slide-out consultation drawer.
+              </p>
+            </div>
+          </section>
+
+          <section id="guide-portability" class="guide-section">
+            <span class="guide-number">09</span>
+
+            <div>
+              <h3>Import & Export</h3>
+
+              <p>
+                Use <strong>Export</strong> to save a consultation as a SyteByte
+                Consult JSON file. This provides a portable backup of the
+                consultation data.
+              </p>
+
+              <p>
+                Use <strong>Import</strong> from the Consultations screen to
+                restore an exported consultation. Imported copies are labeled
+                <strong>(Imported)</strong> so they can be distinguished from
+                the original.
+              </p>
+
+              <p>
+                <strong>Duplicate</strong> creates a separate editable copy
+                without requiring an export/import cycle.
+              </p>
+            </div>
+          </section>
+
+          <section id="guide-workflow" class="guide-section">
+            <span class="guide-number">10</span>
+
+            <div>
+              <h3>Recommended Workflow</h3>
+
+              <ol>
+                <li>Choose Business Owner or Consultant mode.</li>
+                <li>Complete Intake.</li>
+                <li>Review the current state of the business.</li>
+                <li>Turn relevant observations into findings in Analyze.</li>
+                <li>Add business impact and recommended actions.</li>
+                <li>Prioritize findings by Impact and Effort.</li>
+                <li>Select the items that belong in the action plan.</li>
+                <li>Review the final report in Present.</li>
+                <li>Print or save the client report as a PDF.</li>
+                <li>Export the consultation if you want a portable backup.</li>
+              </ol>
+
+              <p>
+                Once a stage has been reached, its item in the workflow rail
+                becomes clickable so you can move backward or forward among
+                unlocked stages.
+              </p>
+            </div>
+          </section>
+
+          <section id="guide-troubleshooting" class="guide-section">
+            <span class="guide-number">11</span>
+
+            <div>
+              <h3>Quick Troubleshooting</h3>
+
+              <h4>My consultation disappeared after navigating.</h4>
+
+              <p>
+                Consultations save automatically in the browser. Open the
+                Consultations screen and select the saved workspace.
+              </p>
+
+              <h4>I need to move a consultation to another browser or device.</h4>
+
+              <p>
+                Export the consultation as JSON, then use
+                <strong>Import</strong> on the other installation.
+              </p>
+
+              <h4>I cannot reach a later workflow stage.</h4>
+
+              <p>
+                Future stages remain locked until they have been reached
+                through the normal workflow. Continue from the current stage
+                to unlock the next one.
+              </p>
+
+              <h4>The PDF looks different from the app.</h4>
+
+              <p>
+                That is intentional. The PDF uses a clean report layout and
+                removes dashboard containers, app navigation, Quick Notes,
+                and other internal controls.
+              </p>
+
+              <h4>Will a hard refresh delete my consultation?</h4>
+
+              <p>
+                A normal refresh does not clear saved consultation data.
+                Clearing browser site data or local storage can remove local
+                consultations, so export important consultations when you want
+                a portable backup.
+              </p>
+            </div>
+          </section>
+
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <footer class="app-footer no-print">
+    <p>
+      © 2026
+      <a
+        href="https://thenillaninja.github.io/mark-portfolio-v2/"
+        target="_blank"
+        rel="noopener"
+      >
+        A NillaNinja Production
+      </a>
+    </p>
+  </footer>
 
   <button
     class="sidebar-overlay"

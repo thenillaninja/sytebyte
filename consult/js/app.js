@@ -2422,3 +2422,123 @@ if (consultImportInput) {
 }
 
 renderStage();
+
+/* -------------------------------------------------
+   USER GUIDE MODAL
+------------------------------------------------- */
+
+const userGuideModal =
+  document.getElementById("user-guide-modal");
+
+const openUserGuideButton =
+  document.getElementById("open-user-guide");
+
+function openUserGuide() {
+  if (!userGuideModal) return;
+
+  userGuideModal.hidden = false;
+
+  document.body.classList.add("user-guide-open");
+
+  const closeButton =
+    userGuideModal.querySelector(".user-guide-close");
+
+  closeButton?.focus();
+}
+
+function closeUserGuide() {
+  if (!userGuideModal) return;
+
+  userGuideModal.hidden = true;
+
+  document.body.classList.remove("user-guide-open");
+
+  openUserGuideButton?.focus();
+}
+
+openUserGuideButton?.addEventListener(
+  "click",
+  openUserGuide
+);
+
+userGuideModal?.addEventListener(
+  "click",
+  event => {
+    if (
+      event.target.closest(
+        "[data-close-user-guide]"
+      )
+    ) {
+      closeUserGuide();
+    }
+  }
+);
+
+document.addEventListener(
+  "keydown",
+  event => {
+    if (
+      event.key === "Escape" &&
+      userGuideModal &&
+      !userGuideModal.hidden
+    ) {
+      closeUserGuide();
+    }
+  }
+);
+
+/* -------------------------------------------------
+   USER GUIDE MOBILE NAV
+------------------------------------------------- */
+
+const userGuideNavToggle =
+  document.getElementById("userGuideNavToggle");
+
+const userGuideNav =
+  document.getElementById("userGuideNav");
+
+const userGuideNavWrap =
+  userGuideNavToggle?.closest(".user-guide-nav-wrap");
+
+function setUserGuideNavOpen(open) {
+  if (
+    !userGuideNavToggle ||
+    !userGuideNavWrap
+  ) {
+    return;
+  }
+
+  userGuideNavWrap.classList.toggle(
+    "open",
+    open
+  );
+
+  userGuideNavToggle.setAttribute(
+    "aria-expanded",
+    String(open)
+  );
+}
+
+userGuideNavToggle?.addEventListener(
+  "click",
+  () => {
+    const open =
+      userGuideNavToggle.getAttribute(
+        "aria-expanded"
+      ) !== "true";
+
+    setUserGuideNavOpen(open);
+  }
+);
+
+userGuideNav?.addEventListener(
+  "click",
+  event => {
+    if (
+      window.innerWidth <= 760 &&
+      event.target.closest("a")
+    ) {
+      setUserGuideNavOpen(false);
+    }
+  }
+);
